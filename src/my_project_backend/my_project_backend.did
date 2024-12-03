@@ -1,5 +1,6 @@
 type Blog = record{
     title: text;
+    date: nat64;
     content: text;
     tags: vec text;
 }

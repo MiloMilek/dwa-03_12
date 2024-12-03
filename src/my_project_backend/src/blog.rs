@@ -6,15 +6,16 @@ pub struct Blog{
     title: String,
     date: u64,
     content: String,
-    tags: Vec<String>,
+    tags: Vec<String>
 }
+
 impl Blog{
-    pub fn new(title: String, content: String, tags: Vec<String>) -> Self{
-        Self { 
+    pub fn new(title: String, content: String, tags: Vec<String>) -> Self {
+        Self{
             title,
             date: time(),
             content,
-            tags
+            tags 
         }
     }
-} 
+}

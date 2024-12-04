@@ -19,15 +19,16 @@ fn add_config(new_config: Config){
 
 #[ic_cdk::update]
 fn add_blog(title: String, content: String, tags: Vec<String>) -> Result<Blog, String>{
+    ic_cdk::println!("Trying to add blog: (title: {}, content: {}, tags: {:?}", title, content, tags);
     let config = CONFIG.with(|config| config.borrow().clone());
     if title.len()> config.max_title_length as usize{
-        return Err("Title is too long! Exceeds 250 characters".to_string())
+        return Err("Title is too long!".to_string())
     }
     if content.len() > config.max_content_length as usize{
-        return Err("Content is too long! Exceeds 2000 characters".to_string())
+        return Err("Content is too long!".to_string())
     }
     if tags.len() > config.max_tags_count as usize{
-        return Err("Too many tags! Exceeds 3 tags".to_string())
+        return Err("Too many tags!".to_string())
     }
     let are_tags_in_config_tags = tags.iter().any(|tag| !config.tags.contains(tag));
     if are_tags_in_config_tags{

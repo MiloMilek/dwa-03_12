@@ -37,7 +37,7 @@ getBlogs()
       <div><p>Title:</p><input id="title" alt="title" type="text" /></div>
       <div><p>Content:</p><input id="content" alt="content" type="text" /></div>
       <div><p>Tags:</p><input id="tags" alt="tags" type="text" /></div>
-      <button type="submit">Click to add!</button>
+      <button type="submit">Click to add</button>
       {{ blogs }}
     </form>
   </main>
